@@ -1,27 +1,11 @@
 /*!
- * \file p3-model.h
+ * \file model.h
  * \brief P3 Model Library Header
  * \details Main header file for the Podcast Production and Publishing (P3) Model library
  *
  * \startuml
  * !include docs/plantuml-monochrome.puml
- * title P3 Model Utility Structs
- *
- * struct String {
- *   ' Data members placeholder
- * }
- *
- * struct Guid {
- *   ' Data members placeholder
- * }
- *
- * struct Timestamp {
- *   ' Data members placeholder
- * }
- *
- * struct Timespan {
- *   ' Data members placeholder
- * }
+ * title P3 Model Library Overview
  *
  * struct Model {
  *   +{static} GetVersion() : string
@@ -30,11 +14,7 @@
  *   +{static} Shutdown() : void
  * }
  *
- * note right of Model : Main library entry point
- * note top of String : Utility string struct
- * note top of Guid : Globally unique identifier
- * note top of Timestamp : Point in time representation
- * note top of Timespan : Duration representation
+ * note right of Model : Main library entry point\nStatic utility functions only
  *
  * \enduml
  */
@@ -44,37 +24,20 @@
 
 #pragma pack(push, 8)
 
-#include <cstdint>
 #include <string>
 
+// Include all utility structs
+#include "runtimeguid.h"
+#include "runtimestring.h"
+#include "runtimetimespan.h"
+#include "runtimetimestamp.h"
+
 namespace ultralove::p3::model {
-/// \brief Utility string struct for the P3 Model library
-/// \details Placeholder string struct for future implementation
-struct String
-{
-    // Data members will be added in future implementation
-};
-
-/// \brief Globally unique identifier struct for the P3 Model library
-/// \details Placeholder GUID struct for future implementation
-struct Guid
-{
-    // Data members will be added in future implementation
-};
-
-/// \brief Timestamp struct for the P3 Model library
-/// \details Placeholder timestamp struct for future implementation
-struct Timestamp
-{
-    // Data members will be added in future implementation
-};
-
-/// \brief Timespan struct for the P3 Model library
-/// \details Placeholder timespan struct for future implementation
-struct Timespan
-{
-    // Data members will be added in future implementation
-};
+// Import runtime types into model namespace for convenience
+using ::ultralove::p3::runtime::Guid;
+using ::ultralove::p3::runtime::String;
+using ::ultralove::p3::runtime::Timespan;
+using ::ultralove::p3::runtime::Timestamp;
 
 /// \brief Main entry point for the P3 Model library
 /// \details This struct provides basic information about the P3 Model library

@@ -23,8 +23,19 @@ endif()
 
 # Create the library target
 add_library(p3-model STATIC
-    p3-model.cpp
+    model.cpp
 )
+
+# Add headers for IDE support and installation
+set(P3_MODEL_HEADERS
+    model.h
+    runtimestring.h
+    runtimeguid.h
+    runtimetimestamp.h
+    runtimetimespan.h
+)
+
+target_sources(p3-model PRIVATE ${P3_MODEL_HEADERS})
 
 # Compiler-specific options
 if(MSVC)
@@ -105,7 +116,7 @@ install(TARGETS p3-model
 )
 
 # Install headers
-install(FILES p3-model.h
+install(FILES ${P3_MODEL_HEADERS}
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 

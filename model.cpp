@@ -1,4 +1,4 @@
-#include "p3-model.h"
+#include "model.h"
 
 namespace ultralove::p3::model {
 // Static member implementation
