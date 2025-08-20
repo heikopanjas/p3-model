@@ -1,6 +1,9 @@
 # Build directory
 _build/
 
+# Documentation output
+docs/
+
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
