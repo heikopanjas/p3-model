@@ -1,0 +1,5 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/p3-model-targets.cmake")
+
+check_required_components(p3-model)
