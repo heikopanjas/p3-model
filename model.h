@@ -24,8 +24,6 @@
 
 #pragma pack(push, 8)
 
-#include <string>
-
 // Include all utility structs
 #include "runtimeguid.h"
 #include "runtimestring.h"
@@ -33,11 +31,8 @@
 #include "runtimetimestamp.h"
 
 namespace ultralove::p3::model {
-// Import runtime types into model namespace for convenience
-using ::ultralove::p3::runtime::Guid;
-using ::ultralove::p3::runtime::String;
-using ::ultralove::p3::runtime::Timespan;
-using ::ultralove::p3::runtime::Timestamp;
+// Alias runtime namespace for convenience
+namespace runtime = ultralove::p3::runtime;
 
 /// \brief Main entry point for the P3 Model library
 /// \details This struct provides basic information about the P3 Model library
@@ -45,11 +40,11 @@ struct Model
 {
     /// \brief Get the library version
     /// \return Version string in format "major.minor.patch"
-    static std::string GetVersion();
+    static runtime::String GetVersion();
 
     /// \brief Get the library name
     /// \return The name of the library
-    static std::string GetLibraryName();
+    static runtime::String GetLibraryName();
 
     /// \brief Initialize the P3 Model library
     /// \return True if initialization was successful, false otherwise

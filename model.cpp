@@ -2,14 +2,16 @@
 
 namespace ultralove::p3::model {
 // Static member implementation
-std::string Model::GetVersion()
+runtime::String Model::GetVersion()
 {
-    return "0.1.0";
+    // TODO: Convert from string literal when String implementation is complete
+    return runtime::String{}; // "0.1.0";
 }
 
-std::string Model::GetLibraryName()
+runtime::String Model::GetLibraryName()
 {
-    return "p3-model";
+    // TODO: Convert from string literal when String implementation is complete
+    return runtime::String{}; // "p3-model";
 }
 
 bool Model::Initialize()

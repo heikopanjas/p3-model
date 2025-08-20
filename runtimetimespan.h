@@ -18,8 +18,8 @@ Nanosecond precision
  * \enduml
  */
 
-#ifndef __P3_RUNTIMETIMESPAN_H_INCL__
-#define __P3_RUNTIMETIMESPAN_H_INCL__
+#ifndef __P3_RUNTIME_TIMESPAN_H_INCL__
+#define __P3_RUNTIME_TIMESPAN_H_INCL__
 
 #pragma pack(push, 8)
 
@@ -38,4 +38,4 @@ struct Timespan
 
 #pragma pack(pop)
 
-#endif // __P3_RUNTIMETIMESPAN_H_INCL__
+#endif // __P3_RUNTIME_TIMESPAN_H_INCL__

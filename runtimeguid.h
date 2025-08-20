@@ -19,8 +19,8 @@ RFC 4122 compliant
  * \enduml
  */
 
-#ifndef __P3_RUNTIMEGUID_H_INCL__
-#define __P3_RUNTIMEGUID_H_INCL__
+#ifndef __P3_RUNTIME_GUID_H_INCL__
+#define __P3_RUNTIME_GUID_H_INCL__
 
 #pragma pack(push, 8)
 
@@ -41,4 +41,4 @@ struct Guid
 
 #pragma pack(pop)
 
-#endif // __P3_RUNTIMEGUID_H_INCL__
+#endif // __P3_RUNTIME_GUID_H_INCL__

@@ -19,8 +19,8 @@ High precision timestamps
  * \enduml
  */
 
-#ifndef __P3_RUNTIMETIMESTAMP_H_INCL__
-#define __P3_RUNTIMETIMESTAMP_H_INCL__
+#ifndef __P3_RUNTIME_TIMESTAMP_H_INCL__
+#define __P3_RUNTIME_TIMESTAMP_H_INCL__
 
 #pragma pack(push, 8)
 
@@ -39,4 +39,4 @@ struct Timestamp
 
 #pragma pack(pop)
 
-#endif // __P3_RUNTIMETIMESTAMP_H_INCL__
+#endif // __P3_RUNTIME_TIMESTAMP_H_INCL__

@@ -21,8 +21,8 @@
  * \enduml
  */
 
-#ifndef __P3_RUNTIMESTRING_H_INCL__
-#define __P3_RUNTIMESTRING_H_INCL__
+#ifndef __P3_RUNTIME_STRING_H_INCL__
+#define __P3_RUNTIME_STRING_H_INCL__
 
 #pragma pack(push, 8)
 
@@ -39,4 +39,4 @@ struct String
 
 #pragma pack(pop)
 
-#endif // __P3_RUNTIMESTRING_H_INCL__
+#endif // __P3_RUNTIME_STRING_H_INCL__
