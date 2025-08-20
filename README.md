@@ -28,9 +28,7 @@ The P3 Model Library is designed to model the complete podcast production and pu
 
 - Doxygen (API documentation generation)
 - LaTeX distribution (PDF documentation)
-- Graphviz dot (dependency graphs)
-- PlantUML (UML diagram generation)
-- Java Runtime (required for PlantUML)
+- Graphviz dot (dependency graphs and UML diagrams)
 
 ## Quick Start
 
@@ -72,13 +70,13 @@ int main() {
     if (!ultralove::p3::model::Model::Initialize()) {
         return 1;
     }
-    
+
     // Get library information
     auto version = ultralove::p3::model::Model::GetVersion();
     auto name = ultralove::p3::model::Model::GetLibraryName();
-    
+
     // Your podcast application logic here
-    
+
     // Cleanup
     ultralove::p3::model::Model::Shutdown();
     return 0;

@@ -3,19 +3,17 @@
  * \brief Timespan utility struct for the P3 Model library
  * \details Placeholder timespan struct for future implementation in podcast domain
  *
- * \startuml
- * !include docs/plantuml-monochrome.puml
- * title Timespan Utility Struct
+ * \dot
+ * digraph timespan_struct {
+ *   rankdir=TB;
+ *   node [shape=record, style=filled, fillcolor=white, fontname="Arial"];
  *
- * struct Timespan {
- *   ' Data members placeholder
- *   ' Future: int64_t total_nanoseconds
+ *   Timespan [label="{Timespan|Future: int64_t total_nanoseconds\\l}"];
+ *
+ *   Note [shape=note, label="Duration representation\\nNanosecond precision"];
+ *   Timespan -> Note [style=dashed];
  * }
- *
- * note top of Timespan : Duration representation
-Nanosecond precision
- *
- * \enduml
+ * \enddot
  */
 
 #ifndef __P3_RUNTIME_TIMESPAN_H_INCL__

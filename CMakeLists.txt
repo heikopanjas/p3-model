@@ -61,7 +61,7 @@ target_include_directories(p3-model
 )
 
 # Documentation with Doxygen
-find_package(Doxygen OPTIONAL_COMPONENTS dot)
+find_package(Doxygen REQUIRED COMPONENTS dot)
 if(DOXYGEN_FOUND)
     # Doxygen configuration
     set(DOXYGEN_PROJECT_NAME "P3 Model Library")
@@ -83,10 +83,7 @@ if(DOXYGEN_FOUND)
     set(DOXYGEN_FILE_PATTERNS "*.h;*.cpp")
     set(DOXYGEN_EXCLUDE_PATTERNS "*/_build/*")
     set(DOXYGEN_HAVE_DOT YES)
-    set(DOXYGEN_PLANTUML_JAR_PATH "")
-    set(DOXYGEN_ENABLE_PREPROCESSING YES)
-
-    # Create documentation target
+    set(DOXYGEN_ENABLE_PREPROCESSING YES)    # Create documentation target
     doxygen_add_docs(docs
         ${CMAKE_CURRENT_SOURCE_DIR}
         COMMENT "Generate LaTeX documentation with Doxygen"

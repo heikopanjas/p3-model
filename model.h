@@ -3,20 +3,17 @@
  * \brief P3 Model Library Header
  * \details Main header file for the Podcast Production and Publishing (P3) Model library
  *
- * \startuml
- * !include docs/plantuml-monochrome.puml
- * title P3 Model Library Overview
+ * \dot
+ * digraph model_overview {
+ *   rankdir=TB;
+ *   node [shape=record, style=filled, fillcolor=white, fontname="Arial"];
+ *   edge [fontname="Arial"];
  *
- * struct Model {
- *   +{static} GetVersion() : string
- *   +{static} GetLibraryName() : string
- *   +{static} Initialize() : bool
- *   +{static} Shutdown() : void
+ *   Model [label="{Model|+ GetVersion() : string\\l+ GetLibraryName() : string\\l+ Initialize() : bool\\l+ Shutdown() : void\\l}"];
+ *
+ *   Model -> "Library Entry Point" [style=dashed, label="provides"];
  * }
- *
- * note right of Model : Main library entry point\nStatic utility functions only
- *
- * \enduml
+ * \enddot
  */
 
 #ifndef __P3_MODEL_H_INCL__

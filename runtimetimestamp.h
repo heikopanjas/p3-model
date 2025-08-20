@@ -3,20 +3,17 @@
  * \brief Timestamp utility struct for the P3 Model library
  * \details Placeholder timestamp struct for future implementation in podcast domain
  *
- * \startuml
- * !include docs/plantuml-monochrome.puml
- * title Timestamp Utility Struct
+ * \dot
+ * digraph timestamp_struct {
+ *   rankdir=TB;
+ *   node [shape=record, style=filled, fillcolor=white, fontname="Arial"];
  *
- * struct Timestamp {
- *   ' Data members placeholder
- *   ' Future: int64_t seconds_since_epoch
- *   ' Future: int32_t nanoseconds
+ *   Timestamp [label="{Timestamp|Future: int64_t seconds_since_epoch\\lFuture: int32_t nanoseconds\\l}"];
+ *
+ *   Note [shape=note, label="Point-in-time representation\\nHigh precision timestamps"];
+ *   Timestamp -> Note [style=dashed];
  * }
- *
- * note top of Timestamp : Point-in-time representation
-High precision timestamps
- *
- * \enduml
+ * \enddot
  */
 
 #ifndef __P3_RUNTIME_TIMESTAMP_H_INCL__

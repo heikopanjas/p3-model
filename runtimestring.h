@@ -3,22 +3,21 @@
  * \brief String utility struct for the P3 Model library
  * \details Placeholder string struct for future implementation in podcast domain
  *
- * \startuml
- * !include docs/plantuml-monochrome.puml
- * title String Utility Struct (Runtime Namespace)
+ * \dot
+ * digraph string_struct {
+ *   rankdir=TB;
+ *   node [shape=record, style=filled, fillcolor=white, fontname="Arial"];
  *
- * namespace ultralove::p3::runtime {
- *   struct String {
- *     ' Data members placeholder
- *     ' Future: char* data_
- *     ' Future: size_t length_
- *     ' Future: size_t capacity_
+ *   subgraph cluster_runtime {
+ *     label="ultralove::p3::runtime";
+ *     style=dashed;
+ *     String [label="{String|Future: char* data_\\lFuture: size_t length_\\lFuture: size_t capacity_\\l}"];
  *   }
+ *
+ *   Note [shape=note, label="Utility string struct\\nfor podcast text data"];
+ *   String -> Note [style=dashed];
  * }
- *
- * note top of ultralove::p3::runtime::String : Utility string struct\nfor podcast text data
- *
- * \enduml
+ * \enddot
  */
 
 #ifndef __P3_RUNTIME_STRING_H_INCL__
