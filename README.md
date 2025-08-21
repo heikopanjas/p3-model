@@ -24,7 +24,7 @@ The P3 Model Library is designed to model the complete podcast production and pu
 - **Metadata Models**: Tag system with Wikipedia/Wikidata integration
 - **Asset Models**: Type-safe media file management (images, audio, video)
 - **Workflow Models**: Chapter organization, location tracking, transcript management
-- **Runtime Utilities**: GUID, String, TimeSpan, TimeStamp foundation classes
+- **Runtime Utilities**: Guid, String, TimeSpan, TimeStamp foundation classes
 
 ## UML Architecture Diagram
 
@@ -34,11 +34,11 @@ The following UML diagram visualizes the complete object model structure and rel
 classDiagram
     %% Base Fabric class
     class Fabric {
-        -typeId: GUID
+        -typeId: Guid
         -creationDate: DateTime
         -modificationDate: DateTime
         -comment: String
-        +id: GUID
+        +id: Guid
     }
 
     %% Main podcast entity
@@ -68,7 +68,7 @@ classDiagram
         +explicit: Boolean
         +publicationDate: DateTime
         +duration: Timespan
-        +guid: GUID
+        +guid: Guid
         +contributions: Contributor[]
         +chapters: ChapterTag[]
         +locations: LocationTag[]
@@ -303,7 +303,18 @@ int main() {
     auto version = ultralove::p3::model::Model::GetVersion();
     auto name = ultralove::p3::model::Model::GetLibraryName();
 
-    // Your podcast application logic here
+    // Create a podcast with actual API usage
+    ultralove::p3::model::Podcast podcast;
+    podcast.title = ultralove::p3::runtime::String{}; // Set podcast title
+    podcast.description = ultralove::p3::runtime::String{}; // Set description
+
+    // Create a season
+    ultralove::p3::model::Season season;
+    season.seasonNumber = 1;
+    season.title = ultralove::p3::runtime::String{}; // Set season title
+
+    // Add season to podcast
+    podcast.seasons.push_back(season);
 
     // Cleanup
     ultralove::p3::model::Model::Shutdown();
@@ -362,7 +373,7 @@ int main() {
 #### Runtime Dependencies
 The struct implementations currently use placeholder runtime classes:
 - `runtime::String`: Basic placeholder (will be enhanced)
-- `runtime::GUID`: Basic 128-bit structure (will be enhanced)
+- `runtime::Guid`: Basic 128-bit structure (will be enhanced)
 - `runtime::Timestamp`: Basic placeholder (will be enhanced)
 - `runtime::Timespan`: Basic placeholder (will be enhanced)
 
@@ -419,10 +430,11 @@ Clean include chains through individual file architecture eliminate all circular
 ```cpp
 // File: modelfabric.h
 struct Fabric {
-    runtime::GUID GetId() const;
-    runtime::String GetComment() const;
-    void SetComment(const runtime::String& comment);
-    // Creation/modification timestamps, type identification
+    runtime::Guid id;                // Unique identifier for this entity
+    runtime::Guid typeId;            // Type identifier for this entity
+    runtime::Timestamp creationDate; // When this entity was created
+    runtime::Timestamp modificationDate; // When this entity was last modified
+    runtime::String comment;         // User comment for this entity
 };
 ```
 
@@ -436,12 +448,23 @@ struct Fabric {
 ```cpp
 // File: modelpodcast.h
 struct Podcast : public Fabric {
-    runtime::String GetUri() const;
-    runtime::String GetName() const;
-    runtime::String GetDescription() const;
-    Publisher GetPublisher() const;
-    Picture GetPicture() const;
-    std::vector<Season> GetSeasons() const;
+    runtime::String title;           // Podcast title
+    runtime::String subtitle;        // Podcast subtitle
+    runtime::String description;     // Podcast description
+    runtime::String summary;         // Podcast summary
+    runtime::String language;        // Podcast language
+    std::vector<runtime::String> categories; // Podcast categories
+    runtime::Timestamp publicationDate;     // Publication date
+    runtime::Timestamp lastBuildDate;       // Last build date
+    runtime::String managingEditor;          // Managing editor
+    runtime::String webmaster;              // Webmaster
+    runtime::String copyright;              // Copyright information
+    runtime::String link;                   // Website link
+    Publisher publisher;                    // Podcast publisher
+    Picture coverArt;                       // Cover art
+    std::vector<TagReference> tags;         // Associated tags
+    std::vector<Contribution> contributors; // Contributors
+    std::vector<Season> seasons;            // Seasons
 };
 ```
 
@@ -453,9 +476,14 @@ struct Podcast : public Fabric {
 ```cpp
 // File: modelseason.h
 struct Season : public Fabric {
-    int GetSequence() const;
-    std::vector<Episode> GetEpisodes() const;
-    Picture GetPicture() const;
+    uint32_t seasonNumber;           // Season number
+    runtime::String title;           // Season title
+    runtime::String description;     // Season description
+    runtime::Timestamp publicationDate; // Season publication date
+    Picture coverArt;                // Season cover art
+    std::vector<TagReference> tags;  // Associated tags
+    std::vector<Contribution> contributors; // Contributors
+    std::vector<Episode> episodes;   // Episodes in this season
 };
 ```
 
@@ -466,12 +494,18 @@ struct Season : public Fabric {
 ```cpp
 // File: modelepisode.h
 struct Episode : public Fabric {
-    runtime::String GetUri() const;
-    EpisodeType GetType() const;
-    runtime::Timespan GetDuration() const;
-    std::vector<ChapterTag> GetChapters() const;
-    std::vector<Enclosure> GetEnclosures() const;
-    std::vector<Contribution> GetContributions() const;
+    uint32_t episodeNumber;          // Episode number
+    runtime::String title;           // Episode title
+    runtime::String subtitle;        // Episode subtitle
+    runtime::String description;     // Episode description
+    runtime::String summary;         // Episode summary
+    EpisodeType type;                // Episode type
+    runtime::Timestamp publicationDate; // Publication date
+    runtime::Timespan duration;      // Episode duration
+    Picture coverArt;                // Episode cover art
+    std::vector<Enclosure> enclosures; // Episode media enclosures
+    std::vector<TagReference> tags;  // Associated tags
+    std::vector<Contribution> contributors; // Contributors
 };
 ```
 
@@ -484,9 +518,13 @@ struct Episode : public Fabric {
 ```cpp
 // File: modelcontributor.h
 struct Contributor : public Fabric {
-    runtime::String GetName() const;
-    Picture GetImage() const;
-    std::vector<ContributorPresence> GetPresences() const;
+    runtime::String name;            // Contributor name
+    runtime::String email;           // Contributor email
+    runtime::String url;             // Contributor website URL
+    runtime::String role;            // Contributor role description
+    runtime::String bio;             // Contributor bio
+    Picture image;                   // Contributor image
+    std::vector<ContributorPresence> presence; // Presence information
 };
 ```
 
