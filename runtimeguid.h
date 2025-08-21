@@ -1,20 +1,8 @@
-/*!
- * \file runtimeguid.h
- * \brief GUID utility struct for the P3 Model library
- * \details Placeholder GUID struct for future implementation in podcast domain
- *
- * \dot
- * digraph guid_struct {
- *   rankdir=TB;
- *   node [shape=record, style=filled, fillcolor=white, fontname="Arial"];
- *
- *   Guid [label="{Guid|Future: uint64_t high\\lFuture: uint64_t low\\l}"];
- *
- *   Note [shape=note, label="128-bit UUID storage\\nRFC 4122 compliant"];
- *   Guid -> Note [style=dashed];
- * }
- * \enddot
- */
+///
+// \file runtimeguid.h
+// \brief GUID utility struct for the P3 Model library
+// \details Placeholder GUID struct for future implementation in podcast domain
+//
 
 #ifndef __P3_RUNTIME_GUID_H_INCL__
 #define __P3_RUNTIME_GUID_H_INCL__
@@ -31,8 +19,8 @@ struct Guid
 {
     // Data members will be added in future implementation
     // Planned: 128-bit UUID storage compliant with RFC 4122
-    // uint64_t high;
-    // uint64_t low;
+    uint64_t high;
+    uint64_t low;
 };
 } // namespace ultralove::p3::runtime
 

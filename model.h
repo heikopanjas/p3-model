@@ -1,20 +1,8 @@
-/*!
- * \file model.h
- * \brief P3 Model Library Header
- * \details Main header file for the Podcast Production and Publishing (P3) Model library
- *
- * \dot
- * digraph model_overview {
- *   rankdir=TB;
- *   node [shape=record, style=filled, fillcolor=white, fontname="Arial"];
- *   edge [fontname="Arial"];
- *
- *   Model [label="{Model|+ GetVersion() : string\\l+ GetLibraryName() : string\\l+ Initialize() : bool\\l+ Shutdown() : void\\l}"];
- *
- *   Model -> "Library Entry Point" [style=dashed, label="provides"];
- * }
- * \enddot
- */
+///
+// \file model.h
+// \brief P3 Model Library Header
+// \details Main header file for the Podcast Production and Publishing (P3) Model library
+//
 
 #ifndef __P3_MODEL_H_INCL__
 #define __P3_MODEL_H_INCL__

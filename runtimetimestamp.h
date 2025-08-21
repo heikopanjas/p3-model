@@ -1,20 +1,8 @@
-/*!
- * \file runtimetimestamp.h
- * \brief Timestamp utility struct for the P3 Model library
- * \details Placeholder timestamp struct for future implementation in podcast domain
- *
- * \dot
- * digraph timestamp_struct {
- *   rankdir=TB;
- *   node [shape=record, style=filled, fillcolor=white, fontname="Arial"];
- *
- *   Timestamp [label="{Timestamp|Future: int64_t seconds_since_epoch\\lFuture: int32_t nanoseconds\\l}"];
- *
- *   Note [shape=note, label="Point-in-time representation\\nHigh precision timestamps"];
- *   Timestamp -> Note [style=dashed];
- * }
- * \enddot
- */
+///
+// \file runtimetimestamp.h
+// \brief Timestamp utility struct for the P3 Model library
+// \details Placeholder timestamp struct for future implementation in podcast domain
+//
 
 #ifndef __P3_RUNTIME_TIMESTAMP_H_INCL__
 #define __P3_RUNTIME_TIMESTAMP_H_INCL__

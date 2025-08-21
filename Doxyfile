@@ -1,0 +1,36 @@
+# Doxyfile for p3-model
+# See https://www.doxygen.nl/manual/config.html for details
+
+PROJECT_NAME           = "P3 Model Library"
+PROJECT_BRIEF          = "C++ object model library for podcast production and publishing"
+PROJECT_NUMBER         = 0.1.0
+OUTPUT_DIRECTORY       = _build/docs
+GENERATE_LATEX         = YES
+GENERATE_HTML          = NO
+LATEX_OUTPUT           = latex
+USE_PDFLATEX           = YES
+PDF_HYPERLINKS         = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+JAVADOC_AUTOBRIEF      = YES
+WARN_IF_UNDOCUMENTED   = YES
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h
+EXCLUDE_PATTERNS       = */_build/*
+HAVE_DOT               = YES
+ENABLE_PREPROCESSING   = YES
+SHOW_USED_FILES        = NO
+SHOW_FILES             = NO
+UML_LOOK               = YES
+DOT_UML_DETAILS        = YES
+TEMPLATE_RELATIONS     = YES
+INCLUDE_GRAPH          = NO
+INCLUDED_BY_GRAPH      = NO
+DIRECTORY_GRAPH        = NO
+DOT_CLEANUP            = YES
+
+# Disable PlantUML explicitly - leave paths empty to disable
+PLANTUML_JAR_PATH      =
+PLANTUML_CFG_FILE      =
+PLANTUML_INCLUDE_PATH  =

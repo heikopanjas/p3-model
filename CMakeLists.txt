@@ -61,45 +61,19 @@ target_include_directories(p3-model
 )
 
 # Documentation with Doxygen
-find_package(Doxygen REQUIRED COMPONENTS dot)
-if(DOXYGEN_FOUND)
-    # Doxygen configuration
-    set(DOXYGEN_PROJECT_NAME "P3 Model Library")
-    set(DOXYGEN_PROJECT_BRIEF "C++ object model library for podcast production and publishing")
-    set(DOXYGEN_PROJECT_VERSION ${PROJECT_VERSION})
-    set(DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/docs")
-    set(DOXYGEN_GENERATE_LATEX YES)
-    set(DOXYGEN_GENERATE_HTML NO)
-    set(DOXYGEN_LATEX_OUTPUT "latex")
-    set(DOXYGEN_LATEX_REFMAN_FILE_NAME "p3-model")
-    set(DOXYGEN_USE_PDFLATEX YES)
-    set(DOXYGEN_PDF_HYPERLINKS YES)
-    set(DOXYGEN_EXTRACT_ALL YES)
-    set(DOXYGEN_EXTRACT_PRIVATE NO)
-    set(DOXYGEN_EXTRACT_STATIC YES)
-    set(DOXYGEN_JAVADOC_AUTOBRIEF YES)
-    set(DOXYGEN_WARN_IF_UNDOCUMENTED YES)
-    set(DOXYGEN_RECURSIVE YES)
-    set(DOXYGEN_FILE_PATTERNS "*.h;*.cpp")
-    set(DOXYGEN_EXCLUDE_PATTERNS "*/_build/*")
-    set(DOXYGEN_HAVE_DOT YES)
-    set(DOXYGEN_ENABLE_PREPROCESSING YES)    # Create documentation target
-    doxygen_add_docs(docs
-        ${CMAKE_CURRENT_SOURCE_DIR}
-        COMMENT "Generate LaTeX documentation with Doxygen"
-    )
+add_custom_target(docs
+    COMMAND doxygen Doxyfile
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    COMMENT "Generate documentation with Doxygen using Doxyfile"
+)
 
-    # Add custom target to build PDF from LaTeX
-    add_custom_target(docs-pdf
-        COMMAND ${CMAKE_COMMAND} -E chdir ${DOXYGEN_OUTPUT_DIRECTORY}/latex make
-        COMMAND ${CMAKE_COMMAND} -E copy ${DOXYGEN_OUTPUT_DIRECTORY}/latex/refman.pdf ${DOXYGEN_OUTPUT_DIRECTORY}/latex/p3-model.pdf
-        DEPENDS docs
-        COMMENT "Building PDF documentation from LaTeX"
-        VERBATIM
-    )
-else()
-    message(STATUS "Doxygen not found, documentation target will not be available")
-endif()
+add_custom_target(docs-pdf
+    COMMAND ${CMAKE_COMMAND} -E chdir ${CMAKE_CURRENT_BINARY_DIR}/docs/latex make
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_BINARY_DIR}/docs/latex/refman.pdf ${CMAKE_CURRENT_BINARY_DIR}/docs/latex/p3-model.pdf
+    DEPENDS docs
+    COMMENT "Building PDF documentation from LaTeX"
+    VERBATIM
+)
 
 # Installation configuration
 include(GNUInstallDirs)
