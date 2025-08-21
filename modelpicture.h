@@ -10,7 +10,7 @@
 #pragma pack(push, 8)
 
 #include "modelasset.h"
-#include "modelenumerations.h"
+#include "modelpicturetype.h"
 
 namespace ultralove::p3::model {
 /// \brief Picture asset

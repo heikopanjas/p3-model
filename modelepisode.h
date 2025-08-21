@@ -11,7 +11,7 @@
 
 #include "modelcontribution.h"
 #include "modelenclosure.h"
-#include "modelenumerations.h"
+#include "modelepisodetype.h"
 #include "modelfabric.h"
 #include "modelpicture.h"
 #include "modeltagreference.h"

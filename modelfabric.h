@@ -19,29 +19,6 @@ namespace runtime = ultralove::p3::runtime;
 
 /// \brief Base class for all P3 Model entities
 /// \details Provides common properties and functionality for all model objects
-///
-/// @dot
-/// digraph fabric_hierarchy {
-///     rankdir=TB;
-///     node [shape=box, style=filled, fillcolor=white, fontname="Arial"];
-///     edge [fontname="Arial"];
-///
-///     Fabric [label="Fabric\n(Base Class)", fillcolor=lightblue];
-///     Podcast [label="Podcast"];
-///     Season [label="Season"];
-///     Episode [label="Episode"];
-///     Contributor [label="Contributor"];
-///     Publisher [label="Publisher"];
-///     Tag [label="Tag"];
-///
-///     Fabric -> Podcast;
-///     Fabric -> Season;
-///     Fabric -> Episode;
-///     Fabric -> Contributor;
-///     Fabric -> Publisher;
-///     Fabric -> Tag;
-/// }
-/// @enddot
 struct Fabric
 {
     /// \brief Unique identifier for this entity
