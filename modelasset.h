@@ -12,9 +12,6 @@
 #include "runtimestring.h"
 
 namespace ultralove::p3::model {
-// Forward declaration
-struct Contributor;
-
 /// \brief Base class for all digital assets
 /// \details Represents any digital asset used in podcast production
 struct Asset
@@ -22,8 +19,8 @@ struct Asset
     /// \brief Asset URI/location
     runtime::String uri;
 
-    /// \brief Asset author
-    const Contributor* author;
+    /// \brief Asset author name
+    runtime::String author;
 
     /// \brief License information
     runtime::String license;
