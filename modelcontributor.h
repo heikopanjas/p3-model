@@ -1,0 +1,48 @@
+///
+// \file modelcontributor.h
+// \brief P3 Model Contributor
+// \details Contributor struct for people involved in podcast production
+//
+
+#ifndef __P3_MODEL_CONTRIBUTOR_H_INCL__
+#define __P3_MODEL_CONTRIBUTOR_H_INCL__
+
+#pragma pack(push, 8)
+
+#include "modelcontributorpresence.h"
+#include "modelfabric.h"
+#include "modelpicture.h"
+#include "runtimestring.h"
+#include <vector>
+
+namespace ultralove::p3::model {
+/// \brief Contributor representation
+/// \details Represents a person involved in podcast production
+struct Contributor : public Fabric
+{
+    /// \brief Contributor name
+    runtime::String name;
+
+    /// \brief Contributor email
+    runtime::String email;
+
+    /// \brief Contributor website URL
+    runtime::String url;
+
+    /// \brief Contributor role description
+    runtime::String role;
+
+    /// \brief Contributor bio
+    runtime::String bio;
+
+    /// \brief Contributor image
+    Picture image;
+
+    /// \brief Presence information
+    std::vector<ContributorPresence> presence;
+};
+} // namespace ultralove::p3::model
+
+#pragma pack(pop)
+
+#endif // __P3_MODEL_CONTRIBUTOR_H_INCL__

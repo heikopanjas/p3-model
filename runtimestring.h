@@ -15,6 +15,13 @@ namespace ultralove::p3::runtime {
 /// This will handle podcast-specific string data like titles, descriptions, etc.
 struct String
 {
+    /// \brief Get the string value (placeholder implementation)
+    /// \return Placeholder string value
+    const char* GetValue() const
+    {
+        return "";
+    }
+
     // Data members will be added in future implementation
     // Planned: character data storage, length tracking, capacity management
 };

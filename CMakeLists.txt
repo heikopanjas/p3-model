@@ -26,17 +26,6 @@ add_library(p3-model STATIC
     model.cpp
 )
 
-# Add headers for IDE support and installation
-set(P3_MODEL_HEADERS
-    model.h
-    runtimestring.h
-    runtimeguid.h
-    runtimetimestamp.h
-    runtimetimespan.h
-)
-
-target_sources(p3-model PRIVATE ${P3_MODEL_HEADERS})
-
 # Compiler-specific options
 if(MSVC)
     target_compile_options(p3-model PRIVATE /W4)

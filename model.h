@@ -15,6 +15,25 @@
 #include "runtimetimespan.h"
 #include "runtimetimestamp.h"
 
+// Include all P3 model classes
+#include "modelasset.h"
+#include "modelchaptertag.h"
+#include "modelcontribution.h"
+#include "modelcontributor.h"
+#include "modelcontributorpresence.h"
+#include "modelenclosure.h"
+#include "modelenumerations.h"
+#include "modelepisode.h"
+#include "modelfabric.h"
+#include "modellocationtag.h"
+#include "modelpicture.h"
+#include "modelpodcast.h"
+#include "modelpublisher.h"
+#include "modelseason.h"
+#include "modeltag.h"
+#include "modeltagreference.h"
+#include "modeltranscripttag.h"
+
 namespace ultralove::p3::model {
 // Alias runtime namespace for convenience
 namespace runtime = ultralove::p3::runtime;

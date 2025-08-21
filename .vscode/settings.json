@@ -1,0 +1,33 @@
+{
+  "files.associations": {
+    "*.cmake": "cmake",
+    "*.cpp": "cpp",
+    "*.csv": "csv",
+    "cmake*.files": "cmake",
+    "makefile.in": "makefile",
+    "Makefile.in": "makefile",
+    "makefile*.files": "makefile",
+    "Makefile*.files": "makefile",
+    "__bit_reference": "cpp",
+    "__hash_table": "cpp",
+    "__split_buffer": "cpp",
+    "__tree": "cpp",
+    "array": "cpp",
+    "bitset": "cpp",
+    "deque": "cpp",
+    "iterator": "cpp",
+    "forward_list": "cpp",
+    "initializer_list": "cpp",
+    "list": "cpp",
+    "map": "cpp",
+    "queue": "cpp",
+    "set": "cpp",
+    "span": "cpp",
+    "stack": "cpp",
+    "string": "cpp",
+    "string_view": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp"
+  }
+}
