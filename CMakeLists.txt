@@ -61,17 +61,24 @@ target_include_directories(p3-model
 )
 
 # Documentation with Doxygen
-add_custom_target(docs
+add_custom_target(docs-generate
     COMMAND doxygen Doxyfile
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     COMMENT "Generate documentation with Doxygen using Doxyfile"
+)
+
+# Post-process DOT files to fix gray backgrounds only (let Doxygen handle PDF generation)
+add_custom_target(docs
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fix-diagrams.sh ${CMAKE_CURRENT_BINARY_DIR}/docs/latex
+    DEPENDS docs-generate
+    COMMENT "Fix gray backgrounds in DOT files"
 )
 
 add_custom_target(docs-pdf
     COMMAND ${CMAKE_COMMAND} -E chdir ${CMAKE_CURRENT_BINARY_DIR}/docs/latex make
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_BINARY_DIR}/docs/latex/refman.pdf ${CMAKE_CURRENT_BINARY_DIR}/docs/latex/p3-model.pdf
     DEPENDS docs
-    COMMENT "Building PDF documentation from LaTeX"
+    COMMENT "Building PDF documentation from LaTeX with fixed diagrams"
     VERBATIM
 )
 

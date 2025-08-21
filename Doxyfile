@@ -28,9 +28,20 @@ TEMPLATE_RELATIONS     = YES
 INCLUDE_GRAPH          = NO
 INCLUDED_BY_GRAPH      = NO
 DIRECTORY_GRAPH        = NO
-DOT_CLEANUP            = YES
+DOT_CLEANUP            = NO
 
-# Disable PlantUML explicitly - leave paths empty to disable
+# Set white background for all Graphviz diagrams
+DOT_GRAPH_MAX_NODES    = 50
+DOT_MULTI_TARGETS      = YES
+# Override Doxygen's default graph background
+DOT_COMMON_ATTR        = "bgcolor=white"
+# Set white background and black text for all diagram elements
+DOT_NODE_ATTR          = "shape=box,height=0.2,width=0.4,fontname=Arial,fontsize=10,style=filled,fillcolor=white,color=black,fontcolor=black"
+DOT_EDGE_ATTR          = "fontname=Arial,fontsize=10,color=black,fontcolor=black"
+# Force white background on collaboration graphs specifically
+COLLABORATION_GRAPH    = YES
+CLASS_GRAPH            = YES
+GRAPHICAL_HIERARCHY    = YES# Disable PlantUML explicitly - leave paths empty to disable
 PLANTUML_JAR_PATH      =
 PLANTUML_CFG_FILE      =
 PLANTUML_INCLUDE_PATH  =
