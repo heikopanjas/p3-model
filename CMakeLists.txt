@@ -64,10 +64,11 @@ add_custom_target(docs
 )
 
 add_custom_target(docs-pdf
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/scripts/add-etbb-font.sh ${CMAKE_CURRENT_BINARY_DIR}/docs/latex
     COMMAND ${CMAKE_COMMAND} -E chdir ${CMAKE_CURRENT_BINARY_DIR}/docs/latex make
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_BINARY_DIR}/docs/latex/refman.pdf ${CMAKE_CURRENT_BINARY_DIR}/docs/latex/p3-model.pdf
     DEPENDS docs
-    COMMENT "Building PDF documentation from LaTeX with fixed diagrams"
+    COMMENT "Building PDF documentation from LaTeX with Edward Tufte's ET Bembo font and fixed diagrams"
     VERBATIM
 )
 

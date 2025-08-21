@@ -24,7 +24,7 @@ The P3 Model Library is designed to model the complete podcast production and pu
 - **Metadata Models**: Tag system with Wikipedia/Wikidata integration
 - **Asset Models**: Type-safe media file management (images, audio, video)
 - **Workflow Models**: Chapter organization, location tracking, transcript management
-- **Runtime Utilities**: Guid, String, TimeSpan, TimeStamp foundation classes
+- **Runtime Utilities**: Guid, String, TimeSpan, TimeStamp primitive types
 
 ## UML Architecture Diagram
 
@@ -371,11 +371,11 @@ int main() {
 ```
 
 #### Runtime Dependencies
-The struct implementations currently use placeholder runtime classes:
-- `runtime::String`: Basic placeholder (will be enhanced)
-- `runtime::Guid`: Basic 128-bit structure (will be enhanced)
-- `runtime::Timestamp`: Basic placeholder (will be enhanced)
-- `runtime::Timespan`: Basic placeholder (will be enhanced)
+The struct implementations use these primitive types:
+- `runtime::String`: String primitive (placeholder implementation)
+- `runtime::Guid`: 128-bit identifier primitive (placeholder implementation)
+- `runtime::Timestamp`: Date/time primitive (placeholder implementation)
+- `runtime::Timespan`: Duration primitive (placeholder implementation)
 
 ## Architecture
 
