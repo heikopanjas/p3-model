@@ -23,11 +23,11 @@ if [ -f "$LATEX_DIR/refman.tex" ]; then
     sed -i '' '/\\documentclass\[twoside\]{book}/a\
 \\usepackage{ETbb} % Use Edward Tufte'"'"'s ET Bembo font (requires texlive)
 ' "$LATEX_DIR/refman.tex"
-    
+
     # Replace \renewcommand{\familydefault}{\sfdefault} with \renewcommand{\familydefault}{\rmdefault}
     # to use the roman (serif) font family instead of sans-serif
     sed -i '' 's/\\renewcommand{\\familydefault}{\\sfdefault}/\\renewcommand{\\familydefault}{\\rmdefault}/' "$LATEX_DIR/refman.tex"
-    
+
     echo "ETbb font configuration added and set as main font successfully."
 else
     echo "Error: refman.tex not found in $LATEX_DIR"
