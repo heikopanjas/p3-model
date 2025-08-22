@@ -1,5 +1,7 @@
 # Copilot Instructions for p3-model
 
+**Please confirm you've read and understood these instructions before we begin.**
+
 ## Project Overview
 p3-model is a C++ object model library for podcast production and publishing (P3) under the ultralove organization. This library provides comprehensive modeling capabilities for podcast workflows, content management, and publishing processes.
 
@@ -321,5 +323,34 @@ The current implementation provides hooks for:
 - Update README.md as new features are implemented and architecture evolves
 
 ---
-*Last updated: August 21, 2025*
-*Recent changes: Synchronized README.md with actual implementation - corrected GUID→Guid, removed fictional Get*() functions, updated all API examples to show real struct member access patterns*
+*Last updated: August 22, 2025*
+
+## Recent Updates & Decisions
+
+### August 22, 2025
+- **Instruction Enhancement**: Added confirmation requirement line at the top of instructions
+  - Added "Please confirm you've read and understood these instructions before we begin."
+  - Ensures proper acknowledgment of project guidelines before starting work
+  - Maintains clear communication expectations for development workflow
+
+### August 21, 2025
+- **Script Cleanup**: Removed unnecessary `scripts/add-times-font.sh` file (empty and no longer needed)
+- **UML Diagram Simplification**: Updated documentation to treat runtime utilities as primitive types
+  - String, Guid, Timestamp, Timespan now treated as built-in primitives in diagrams
+  - Removed emphasis on these as separate "foundation classes" or "utility classes"
+  - UML diagrams focus on domain model relationships rather than implementation details
+  - Updated language throughout documentation to reflect primitive type approach
+- **README.md Synchronization with Actual Implementation**: Fixed critical discrepancies between documentation and code
+  - **GUID → Guid Correction**: Updated all references from incorrect `GUID` to actual `Guid` type name throughout README.md
+  - **API Documentation Correction**: Replaced fictional `Get*()` function calls with actual public member access patterns
+  - **Fabric Class Documentation**: Updated to show real implementation with direct member access (`id`, `typeId`, `creationDate`, etc.)
+  - **Podcast Class Documentation**: Corrected to show actual members (`title`, `subtitle`, `description`, `publisher`, `coverArt`, `seasons`, etc.)
+  - **Season Class Documentation**: Updated to reflect real implementation (`seasonNumber`, `title`, `description`, `episodes`, etc.)
+  - **Episode Class Documentation**: Fixed to show actual structure (`episodeNumber`, `title`, `type`, `duration`, `enclosures`, etc.)
+  - **Contributor Class Documentation**: Corrected to show real members (`name`, `email`, `url`, `role`, `bio`, `image`, `presence`)
+  - **Integration Example Enhancement**: Updated example code to show real API usage patterns with direct member access
+  - **Runtime Namespace Correction**: All references now correctly use `ultralove::p3::runtime` namespace
+- **Documentation Standards Update**: Emphasized importance of keeping documentation synchronized with actual implementation
+  - Added requirement to verify API documentation against actual header files
+  - Established pattern of showing real struct member variables instead of fictional getter functions
+  - README.md now accurately reflects the value-semantics design with direct member access
