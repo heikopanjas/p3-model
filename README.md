@@ -688,26 +688,6 @@ To update the version:
 1. Edit the `version.in` file
 2. Rebuild the project
 
-## Contributing
-
-We welcome contributions to the P3 Model Library. Please follow these guidelines:
-
-1. **Code Style**: Follow the established coding standards outlined above
-2. **Testing**: Write unit tests for new functionality
-3. **Documentation**: Update documentation for API changes
-4. **Commits**: Use conventional commit format (`type(scope): description`)
-5. **Branches**: Use feature branches for development
-
-### Commit Message Format
-
-```text
-type(scope): description
-
-feat(core): add episode duration validation
-fix(model): correct timestamp serialization
-docs(api): update getting started guide
-```
-
 ## Build System
 
 The project uses modern CMake practices:
